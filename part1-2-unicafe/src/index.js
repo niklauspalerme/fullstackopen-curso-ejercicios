@@ -2,19 +2,32 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 
-const StatisticLine = ({text,value}) =>  <p>{text} {value}</p>
+const StatisticLine = ({text,value}) =>  {
+
+  return(
+    <tr>
+       <td>{text} {value}</td>
+    </tr>
+  )
+}
 
 const Statistics = ({good,neutral,bad,all}) => {
   return(
-    <>
-      <h1>Statistics</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Statstics</th>
+        </tr>
+      </thead>
+      <tbody>
         <StatisticLine text='Good:' value={good} />
         <StatisticLine text='Neutral:' value={neutral} />
         <StatisticLine text='Bad:' value={bad} />
         <StatisticLine text='All:' value={all} />
         <StatisticLine text='Average:' value={isNaN( ((good - neutral - bad)/all) ) ? 0 : ( ( (good*1) + (bad*-1))/all )} />
         <StatisticLine text='Positive % :' value={isNaN(good/all)? 0: good/all} />
-    </>
+      </tbody>
+    </table>
   )
 }
 
