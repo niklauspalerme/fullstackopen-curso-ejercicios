@@ -1,6 +1,25 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
+
+const StatisticLine = ({text,value}) =>  <p>{text} {value}</p>
+
+const Statistics = ({good,neutral,bad,all}) => {
+  return(
+    <>
+      <h1>Statistics</h1>
+        <StatisticLine text='Good:' value={good} />
+        <StatisticLine text='Neutral:' value={neutral} />
+        <StatisticLine text='Bad:' value={bad} />
+        <StatisticLine text='All:' value={all} />
+        <StatisticLine text='Average:' value={isNaN( ((good - neutral - bad)/all) ) ? 0 : ( ( (good*1) + (bad*-1))/all )} />
+        <StatisticLine text='Positive % :' value={isNaN(good/all)? 0: good/all} />
+    </>
+  )
+}
+
+const Button = ({handleControllerEvent, text}) => <button onClick={handleControllerEvent}> {text}</button>
+
 const App = () => {
 
   //States
@@ -30,16 +49,15 @@ const App = () => {
   return (
     <div>
       <h1>Give some feedback</h1>
-      <button onClick={handledGoodClick}>Good +</button>
-      <button onClick={handledNeutralClick}>Neutral =</button>
-      <button onClick={handledBadClick}>Bad -</button>
-      <h1>Statistics</h1>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>All: {all} </p>
-      <p>Average: { isNaN( ((good - neutral - bad)/all) ) ? 0 : ( ( (good*1) + (bad*-1))/all )}</p>
-      <p>Positive: {isNaN(good/all)? 0: good/all}%</p>
+      <Button handleControllerEvent={handledGoodClick} text="Good +" />
+      <Button handleControllerEvent={handledNeutralClick} text="Neutral =" />
+      <Button handleControllerEvent={handledBadClick} text="Bad -" />
+      {
+        (all === 0)
+        ?<p>No feedback given</p>
+        :<Statistics good={good} bad={bad} neutral={neutral} all={all}/>
+      }
+      
     </div>
   )
 }
