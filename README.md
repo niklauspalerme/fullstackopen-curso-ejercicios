@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# fullstackopen-curso-ejercicios
-=======
 # fullstackopen-curso-ejercicios
 
 # Ejercicio 1-3-anecdotas
@@ -12,4 +9,5 @@
 # Ejercicio 2-courseInfo
 
 - Se utiliza reduce() para sumar los valores de una propiedad del array de objestos
->>>>>>> Stashed changes
+- Se factorizaron Componentes en diferentes files
+- Se renderizaron componentes usando map()
