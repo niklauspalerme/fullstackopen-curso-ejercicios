@@ -6,7 +6,7 @@
 - La utlización del reduce() para comparar valores
 - Como calcular un numero Ramdon
 
-# Ejercicio 2-courseInfo
+# Ejercicio 2a -courseInfo
 
 - Se utiliza reduce() para sumar los valores de una propiedad del array de objestos
 - Se factorizaron Componentes en diferentes files
@@ -21,3 +21,5 @@
 - Se utilizo el metodo **filter()** para filtrar el array de objetos
 - Se utilizo el metodo **includes()**  ver si existia xs valor escrito en el input
 - Se refactorizo en 3 Componentes
+
+# Ejercicio Part 2c - Country
