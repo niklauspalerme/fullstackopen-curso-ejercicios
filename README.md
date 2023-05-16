@@ -41,3 +41,6 @@
 - Utilizamos las siguienes funciones **map(), find(), includes(), toLowerCase(), reduce(), filter()**
 - Utilizamos un **Form** con sus intputs y buttons
 - Utilizamos los pop-up **window.confirm()**
+
+# Ejercicio Part 2e - Phonebook
+
