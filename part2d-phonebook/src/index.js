@@ -81,14 +81,17 @@ const App = () => {
   const handleDelete = (event) =>{
 
     event.preventDefault();
-    const id = event.target.id;
+    const id = parseInt(event.target.id);
     const name = event.target.name
-
+  
     if (window.confirm(`Do you wan to delete ${name}`)){
-      const persona = persons.filter( pers => pers.id !== id);
-      setPersons(persona);
+      const personas = [...persons];
+      const personasFiltradas = personas.filter( pers => pers.id !== id);
+      console.log("Filtrado:", personasFiltradas)
+      setPersons(personasFiltradas);
       deletePersona(id);
     }
+
   }
 
   return (
