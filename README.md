@@ -44,3 +44,13 @@
 
 # Ejercicio Part 2e - Phonebook
 
+- Corremos los 2 comandos para que funcione la app:
+    - **npm run ser**
+    - **npm start**
+- Se crea un componente llamado **Notificacion.js** donde va manejar y mostrar los mensajes de adventencia 
+- Se crea un state en **index** para que maneje los mensajes de creado, update y delete:
+    - **const [message, setMessage] =useState('')**
+    - El controlador **handleForm** controla los states **create,update**
+    - El controlador **handleDelete** controla el state **delete**
+
+    
